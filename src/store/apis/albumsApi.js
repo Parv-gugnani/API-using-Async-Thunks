@@ -9,12 +9,13 @@ const albumsApi = createApi({
   endpoints(builder) {
     return {
       addAlbums: builder.mutation({
-        query: (user) =>{
-           return{
-            url:'/albums'
-           }
-        }
-      })
+        query: (user) => {
+          return {
+            url: "/albums",
+            title: faker.commerce.productName(),
+          };
+        },
+      }),
       fetchAlbums: builder.query({
         query: (user) => {
           return {
