@@ -31,5 +31,6 @@ const albumsApi = createApi({
   },
 });
 
-export const { useFetchAlbumsQuery } = albumsApi;
+export const { useFetchAlbumsQuery, useAddAlbumsMutation } = albumsApi;
+// mutation ===>>>>>>> a function that performs such a side effect on the server
 export { albumsApi };
