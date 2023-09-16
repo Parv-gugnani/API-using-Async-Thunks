@@ -8,6 +8,13 @@ const albumsApi = createApi({
   }),
   endpoints(builder) {
     return {
+      addAlbums: builder.mutation({
+        query: (user) =>{
+           return{
+            url:'/albums'
+           }
+        }
+      })
       fetchAlbums: builder.query({
         query: (user) => {
           return {
