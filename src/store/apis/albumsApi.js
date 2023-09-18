@@ -21,6 +21,10 @@ const albumsApi = createApi({
   endpoints(builder) {
     return {
       removeAlbum: builder.mutation({
+        invalidatesTags: (result, error, album) => {
+          console.log(album);
+          return [];
+        },
         query: (album) => {
           return {
             url: `/albums/${album.id}`,

@@ -27,6 +27,11 @@
       "userId": 1,
       "title": "Electronic Steel Mouse",
       "id": 2
+    },
+    {
+      "userId": 2,
+      "title": "Fantastic Steel Computer",
+      "id": 3
     }
   ],
   "photos": []
