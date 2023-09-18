@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { fetchUsers } from '../thunks/fetchUsers';
-import { addUser } from '../thunks/addUser';
-import { removeUser } from '../thunks/removeUser';
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchUsers } from "../thunks/fetchUsers";
+import { addUser } from "../thunks/addUser";
+import { removeUser } from "../thunks/removeUser";
 
 const usersSlice = createSlice({
-  name: 'users',
+  name: "users",
   initialState: {
     isLoading: false,
     data: [],

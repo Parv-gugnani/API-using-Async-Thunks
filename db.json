@@ -1,35 +1,32 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Myra"
+      "name": "Alma Strosin",
+      "id": 1
     },
     {
-      "name": "Vanessa Kunde",
+      "name": "Louise Halvorson",
       "id": 2
     },
     {
-      "name": "Irvin O'Conner",
+      "name": "Raul MacGyver",
       "id": 3
     },
     {
-      "name": "Dr. Derrick Toy",
+      "name": "Herbert Cormier",
       "id": 4
-    },
-    {
-      "name": "Dewey Jacobs",
-      "id": 5
-    },
-    {
-      "name": "Kelly Moen",
-      "id": 6
     }
   ],
   "albums": [
     {
-      "id": 10,
-      "title": "Hiking Trip",
-      "userId": 1
+      "userId": 1,
+      "title": "Incredible Frozen Bacon",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "title": "Electronic Steel Mouse",
+      "id": 2
     }
   ],
   "photos": []

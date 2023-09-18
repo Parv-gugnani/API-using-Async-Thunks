@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { faker } from "@faker-js/faker";
 
+// DEV ONLY!!!
 const pause = (duration) => {
   return new Promise((resolve) => {
     setTimeout(resolve, duration);
@@ -12,20 +13,33 @@ const albumsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:3005",
     fetchFn: async (...args) => {
+      // REMOVE FOR PRODUCTION
       await pause(1000);
       return fetch(...args);
     },
   }),
   endpoints(builder) {
     return {
-      addAlbums: builder.mutation({
+      removeAlbum: builder.mutation({
+        query: (album) => {
+          return {
+            url: `/albums/${album.id}`,
+            method: "DELETE",
+          };
+        },
+      }),
+      addAlbum: builder.mutation({
         invalidatesTags: (result, error, user) => {
-          return [{ type: "error", id: user.id }];
+          return [{ type: "Album", id: user.id }];
         },
         query: (user) => {
           return {
             url: "/albums",
-            title: faker.commerce.productName(),
+            method: "POST",
+            body: {
+              userId: user.id,
+              title: faker.commerce.productName(),
+            },
           };
         },
       }),
@@ -47,6 +61,9 @@ const albumsApi = createApi({
   },
 });
 
-export const { useFetchAlbumsQuery, useAddAlbumsMutation } = albumsApi;
-// mutation ===>>>>>>> a function that performs such a side effect on the server
+export const {
+  useFetchAlbumsQuery,
+  useAddAlbumMutation,
+  useRemoveAlbumMutation,
+} = albumsApi;
 export { albumsApi };

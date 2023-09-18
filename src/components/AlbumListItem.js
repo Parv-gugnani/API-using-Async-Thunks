@@ -1,11 +1,31 @@
+import { FaTrash } from "react-icons/fa";
+import { useRemoveAlbumMutation } from "../store";
 import Button from "./Button";
 import ExpandablePanel from "./ExpandablePanel";
 
 function AlbumsListItem({ album }) {
-  const header = <div>{album.title}</div>;
+  const [removeAlbum, results] = useRemoveAlbumMutation();
+
+  const handleRemoveAlbum = () => {
+    removeAlbum(album);
+  };
+
+  const header = (
+    <>
+      <Button
+        className="mr-2"
+        loading={results.isLoading}
+        onClick={handleRemoveAlbum}
+      >
+        <FaTrash />
+      </Button>
+      {album.title}
+    </>
+  );
+
   return (
     <ExpandablePanel key={album.id} header={header}>
-      List of photos in Albums
+      List of photos in the album
     </ExpandablePanel>
   );
 }
