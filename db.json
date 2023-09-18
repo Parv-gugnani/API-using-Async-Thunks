@@ -5,12 +5,24 @@
       "name": "Myra"
     },
     {
-      "name": "Elsie Price",
+      "name": "Vanessa Kunde",
+      "id": 2
+    },
+    {
+      "name": "Irvin O'Conner",
       "id": 3
     },
     {
-      "name": "Harold Strosin",
+      "name": "Dr. Derrick Toy",
       "id": 4
+    },
+    {
+      "name": "Dewey Jacobs",
+      "id": 5
+    },
+    {
+      "name": "Kelly Moen",
+      "id": 6
     }
   ],
   "albums": [
